@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 interface CardProps {
@@ -38,7 +38,14 @@ export function LearningProgressCard({ className }: CardProps) {
 
 // Happy students card with avatar stack and rating
 export function HappyStudentsCard({ className }: CardProps) {
-  const initials = ["A", "B", "C", "D"];
+  const initials = [
+  "/asset/student/s1.png",
+  "/asset/student/s3.png",
+  "/asset/student/s1.png",
+  "/asset/student/s3.png",
+  "/asset/student/s5.png",
+
+];;
 
   return (
     <div className={cn("w-40 rounded-xl bg-white p-3 shadow-lg", className)}>
@@ -48,19 +55,20 @@ export function HappyStudentsCard({ className }: CardProps) {
         <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
       </div>
       <div className="mt-2 flex items-center">
-        {initials.map((letter) => (
+        {initials.map((image) => (
           <Avatar
-            key={letter}
+            key={image}
             className="-ml-1.5 h-6 w-6 border-2 border-white first:ml-0"
           >
-            <AvatarFallback className="bg-blue-100 text-[10px] text-blue-700">
-              {letter}
-            </AvatarFallback>
+             <AvatarImage src={image} alt="" />
+            {/* <AvatarFallback className="bg-blue-100 text-[10px] text-blue-700">
+              {image}
+            </AvatarFallback> */}
           </Avatar>
         ))}
-        <span className="ml-1.5 rounded-full bg-yellow-400 px-1.5 py-0.5 text-[9px] font-bold text-blue-900">
+        {/* <span className="ml-1.5 rounded-full bg-yellow-400 px-1.5 py-0.5 text-[9px] font-bold text-blue-900">
           +5K
-        </span>
+        </span> */}
       </div>
     </div>
   );

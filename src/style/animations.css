@@ -1,0 +1,54 @@
+/* Shared animation utilities (plain CSS, works with Tailwind v3 and v4) */
+
+/* Cards and shapes floating up and down */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Squiggle shapes gently swinging */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(-8px); }
+}
+
+/* Background blobs drifting around */
+@keyframes blob-move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.1); }
+  66% { transform: translate(-30px, 30px) scale(0.95); }
+}
+
+/* Background blobs slowly changing color */
+@keyframes blob-hue {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(30deg); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-wiggle { animation: wiggle 5s ease-in-out infinite; }
+.animate-blob {
+  animation: blob-move 14s ease-in-out infinite, blob-hue 10s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Soft blob colors (radial gradients, so no blur filter is needed) */
+.blob-lime {
+  background: radial-gradient(closest-side, rgba(190, 242, 100, 0.55), rgba(190, 242, 100, 0));
+}
+.blob-blue {
+  background: radial-gradient(closest-side, rgba(129, 140, 248, 0.35), rgba(129, 140, 248, 0));
+}
+
+/* Delays so animated items do not move in sync (keep these after the classes above) */
+.animation-delay-2000 { animation-delay: -2s; }
+.animation-delay-4000 { animation-delay: -4s; }
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-wiggle,
+  .animate-blob {
+    animation: none;
+  }
+}
