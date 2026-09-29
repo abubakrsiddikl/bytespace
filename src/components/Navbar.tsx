@@ -4,12 +4,14 @@ import { Logo } from "./Logo";
 import { NavLinks } from "./NavLinks";
 import { NAV_LINKS } from "./navigation";
 import { MobileMenu } from "./MobileMenu";
+import { GridBackground } from "./Decorations";
 
 
 // Top navigation bar: logo, links, auth actions
 export function Navbar() {
   return (
-    <header className="relative z-20 w-full">
+    <header className="relative z-20 w-full bg-blue-700">
+      <GridBackground></GridBackground>
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
 
