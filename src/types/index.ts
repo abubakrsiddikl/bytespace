@@ -12,3 +12,12 @@ export interface Feature {
   id: string;
   label: string;
 }
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  quote: string;
+  // Path relative to /public, e.g. "/images/testimonials/sarah.jpg"
+  avatar: string;
+}
