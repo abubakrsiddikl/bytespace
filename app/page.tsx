@@ -1,9 +1,32 @@
-import Image from "next/image";
+// import { BrandLogos } from "@/components/BrandLogos";
+// import { HeroSection } from "@/components/HeroSection";
+// import { Navbar } from "@/components/Navbar";
 
-export default function Home() {
+import { HeroSection } from "@/components/HeroSection";
+import { PartnerLogos } from "@/components/PartnerLogos";
+
+
+// export default function HomePage() {
+//   return (
+//     <main>
+//       <div className="relative">
+//         <Navbar />
+//         <HeroSection />
+//       </div>
+
+//       <BrandLogos />
+//     </main>
+//   );
+// }
+
+
+
+// Home page: hero + partner logos strip
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-     This is hello
-    </div>
+    <main>
+      <HeroSection />
+      <PartnerLogos />
+    </main>
   );
 }
