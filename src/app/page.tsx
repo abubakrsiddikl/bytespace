@@ -6,6 +6,7 @@ import { GrowthSection } from "@/components/growth/GrowthSection";
 import { HeroSection } from "@/components/HeroSection";
 import { PartnerLogos } from "@/components/PartnerLogos";
 import { TestimonialsSection } from "@/components/testimonials/TestimonialsSection";
+import Footer from "@/components/footer/Footer";
 
 // Home page: hero + partner logos strip
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <CreateManageSection />
       <CreatorCtaSection />
       <TestimonialsSection />
+      <Footer />
     </main>
   );
 }

@@ -1,3 +1,5 @@
+import { NavLink } from "./course.type";
+
 // Animated stat item (e.g. 12K Students)
 export interface Stat {
   id: string;
@@ -20,4 +22,9 @@ export interface Testimonial {
   quote: string;
   // Path relative to /public, e.g. "/images/testimonials/sarah.jpg"
   avatar: string;
+}
+
+export interface FooterColumn {
+  id: string;
+  links: NavLink[];
 }
