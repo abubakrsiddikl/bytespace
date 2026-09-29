@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/sheet";
 import { NavLinks } from "./NavLinks";
 import { NAV_LINKS } from "./navigation";
+import { GridBackground } from "./Decorations";
+import { Logo } from "./Logo";
 
 
 // Slide-in menu for small screens (hidden on md and above)
@@ -32,8 +34,9 @@ export function MobileMenu() {
       </SheetTrigger>
 
       <SheetContent side="right" className="w-72 border-none bg-blue-700 text-white">
+        <GridBackground></GridBackground>
         <SheetHeader>
-          <SheetTitle className="text-left text-white">ByteSpace</SheetTitle>
+          <SheetTitle className="text-left text-white"><Logo /></SheetTitle>
         </SheetHeader>
 
         <div className="mt-8 flex flex-col gap-8 px-4">
